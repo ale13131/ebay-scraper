@@ -4,6 +4,7 @@ Need the following py packages
 1. BeautifulSoup4 (pip install beautifulsoup4)
 2. mechanize (pip install mechanize)
 3. requests (pip install requests)
+4. lxml (pip install lxml)
 
 Need the following files (if using unmodified scraper.py)
 1. itemList.txt
