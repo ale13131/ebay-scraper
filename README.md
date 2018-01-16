@@ -1,9 +1,9 @@
 Ebay Item value scraper
 
 Need the following py packages
--BeautifulSoup4 (pip install beautifulsoup4)
--mechanize (pip install mechanize)
--requests (pip install requests)
+1. BeautifulSoup4 (pip install beautifulsoup4)
+2. mechanize (pip install mechanize)
+3. requests (pip install requests)
 
 Need the following files (if using unmodified scraper.py)
 -itemList.txt
