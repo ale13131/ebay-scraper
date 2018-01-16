@@ -39,12 +39,15 @@ class User(object):
         
         for item in listcontainer:
             for string in item.h3.a.stripped_strings: #print name
-                ofile.write((repr(string))+",")
-            ofile.write(item.h3.a.get("href")+",")               #print link
+                newstring = (repr(string)).replace("u'","").replace("'","")
+                ofile.write((newstring)+"\t")
+            ofile.write(item.h3.a.get("href")+"\t")               #print link
             for string in item.ul.li.span.stripped_strings:
-                ofile.write((repr(string))+",")                  #print price
+                newstring = (repr(string)).replace("u'","").replace("'","")
+                ofile.write((repr(newstring))+"\t")                  #print price
             for string in item.ul.li.find_next_sibling("li").find_next_sibling("li").span.stripped_strings:
-                ofile.write((repr(string))+"\n")                  #print shipping price
+                newstring = (repr(string)).replace("u'","").replace("'","")
+                ofile.write((repr(newstring))+"\n")                  #print shipping price
                 
         print "Completed searching for item: " + search
         
@@ -58,7 +61,7 @@ if __name__ == "__main__":
             thing = item
             thing.split()
             thing = "_".join(thing.split())
-            ofile = open(thing+".csv","w+")
+            ofile = open(thing+".tsv","w+")
             bot.searchItem(url,item,ofile)
             ofile.close()
             item = f.readline()
