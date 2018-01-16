@@ -19,3 +19,4 @@ BUGS/ISSUES:
 2. Item names with a ',' character will cause the csv to add an extra column
 3. Numbers are represented as a String and not a double/float
 
+This was made in like a day or so, so excuse the poor coding
