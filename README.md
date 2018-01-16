@@ -6,7 +6,7 @@ Need the following py packages
 3. requests (pip install requests)
 
 Need the following files (if using unmodified scraper.py)
--itemList.txt
+1. itemList.txt
 
 To run:
 1. Enter items to be searched in itemList.txt. Each item has its own line. See the demoItemList.txt as a guide
