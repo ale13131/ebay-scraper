@@ -10,8 +10,7 @@ Need the following files (if using unmodified scraper.py)
 
 To run:
 1. Enter items to be searched in itemList.txt. Each item has its own line. See the demoItemList.txt as a guide
-2. Run the scraper by calling the following line
-			scraper.py
+2. Run the scraper by calling the following line: scraper.py
 3. Once script is completed, a csv file will be generated for each item searched.
 
 
