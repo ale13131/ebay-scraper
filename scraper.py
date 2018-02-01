@@ -11,7 +11,6 @@ import requests
 
 reload(sys)
 sys.setdefaultencoding('utf8')
-#hahaha what am i doing
 
 #browser setup (opens "browser" for us to read html files)
 class User(object):
@@ -39,14 +38,14 @@ class User(object):
         
         for item in listcontainer:
             for string in item.h3.a.stripped_strings: #print name
-                newstring = (repr(string)).replace("u'","").replace("'","")
-                ofile.write((newstring)+"\t")
-            ofile.write(item.h3.a.get("href")+"\t")               #print link
+                newstring = (repr(string)).replace("u'","").replace("'","").replace(","," ")
+                ofile.write((newstring)+", ")
+            ofile.write(item.h3.a.get("href")+", ")               #print link
             for string in item.ul.li.span.stripped_strings:
-                newstring = (repr(string)).replace("u'","").replace("'","")
-                ofile.write((repr(newstring))+"\t")                  #print price
+                newstring = (repr(string)).replace("u'","").replace("'","").replace(","," ")
+                ofile.write((repr(newstring))+", ")                  #print price
             for string in item.ul.li.find_next_sibling("li").find_next_sibling("li").span.stripped_strings:
-                newstring = (repr(string)).replace("u'","").replace("'","")
+                newstring = (repr(string)).replace("u'","").replace("'","").replace(","," ")
                 ofile.write((repr(newstring))+"\n")                  #print shipping price
                 
         print "Completed searching for item: " + search
@@ -61,7 +60,7 @@ if __name__ == "__main__":
             thing = item
             thing.split()
             thing = "_".join(thing.split())
-            ofile = open(thing+".tsv","w+")
+            ofile = open(thing+".csv","w+")
             bot.searchItem(url,item,ofile)
             ofile.close()
             item = f.readline()
